@@ -1,3 +1,5 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Hugo Bootstrap 4 | SASS Edition"
+
+theme = ["t1"]
