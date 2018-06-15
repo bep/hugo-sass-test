@@ -28,7 +28,7 @@ $green:   #5cb85c !default;
 $teal:    #20c997 !default;
 $cyan:    #5bc0de !default;
 
-$primary:       $moo !default;
+$primary:       $blue !default;
 $secondary:     $gray-200 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -49,7 +49,14 @@ $border-radius-lg:            0 !default;
 $border-radius-sm:            0 !default;
 
 // Fonts
-$font-family-sans-serif:      "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$web-font-path:				"https://fonts.googleapis.com/css?family=Fira+Sans:400,600";
+
+
+$font-family-sans-serif:      "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$font-size-base:              0.875rem !default;
+
 
 $text-muted:                  rgba(255,255,255,.4) !default;
 
