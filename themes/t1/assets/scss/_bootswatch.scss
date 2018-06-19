@@ -3,6 +3,17 @@
 // Bootswatch
 
 
+// Test mixin
+.bepmix {
+  @include prefix((
+    column-count: 3,
+    column-gap: 1.5em,
+    column-rule: 2px solid hotpink
+  ), webkit moz);
+}
+
+
+
 // Variables ===================================================================
 
 $web-font-path: "https://fonts.googleapis.com/css?family=Lato:300,400,700" !default;

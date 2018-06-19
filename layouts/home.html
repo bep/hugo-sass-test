@@ -6,7 +6,8 @@
     <title>Hugo Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    {{ $styles := resources.Resource "scss/main.scss" | resources.Sassify | resources.Minify | resources.Fingerprint }}
+
+    {{ $styles := resources.Open "scss/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     <script>
     </script>
@@ -14,7 +15,7 @@
   <body>
     <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
       <div class="container">
-        <a href="../" class="navbar-brand">Hugo Bootstrap | SASS Edition</a>
+        <a href="../" class="navbar-brand">Hugo Bootstrap | SCSS Edition</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -85,7 +86,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-7 col-sm-6">
             <h1>Hugo Bootstrap 4</h1>
-            <p class="lead">The Brave SASS Edition</p>
+            <p class="lead">The Brave SCSS Edition</p>
           </div>
           <div class="col-lg-4 col-md-5 col-sm-6">
             <div class="sponsor">
@@ -105,7 +106,7 @@
             </div>
 
             <div class="bs-component">
-              <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <nav class="navbar navbar-expand-lg navbar-light bg-primary">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>

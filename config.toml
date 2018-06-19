@@ -1,5 +1,5 @@
-baseURL = "http://bep.is/"
+baseURL = "http://bep.is/hugoscss"
 languageCode = "en-us"
-title = "Hugo Bootstrap 4 | SASS Edition"
+title = "Hugo Bootstrap 4 | SCSS Edition"
 
 theme = ["t1"]
