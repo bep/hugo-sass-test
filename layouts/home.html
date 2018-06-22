@@ -6,7 +6,7 @@
     <title>Hugo bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    {{ $styles := resources.Open "scss/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+    {{ $styles := resources.Open "scss/main.scss" | resources.ToCSS | resources.PostCSS }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     <script>
     </script>
