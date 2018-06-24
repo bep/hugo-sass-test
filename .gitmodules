@@ -1,3 +1,6 @@
 [submodule "assets/vendor/bootstrap"]
 	path = themes/t1/assets/vendor/bootstrap
 	url = https://github.com/twbs/bootstrap.git
+[submodule "themes/t1/assets/vendor/open-iconic"]
+	path = themes/t1/assets/vendor/open-iconic
+	url = https://github.com/iconic/open-iconic.git

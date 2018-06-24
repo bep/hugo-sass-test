@@ -6,10 +6,10 @@
     <title>Hugo bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    {{ $cssOpts := (dict "precicion" 4 ) }}
+    {{ $cssOpts := (dict "precision" 8 "enableEmbeddedSourceMap" true ) }}
     {{/* $pcssOpts := (dict "config" "assets/config/postcss.js" ) }}
     {{ $styles := resources.Open "scss/main.scss" | resources.ToCSS | resources.PostCSS $pcssOpts  */}}
-    {{ $styles := resources.Open "scss/main.scss" | resources.ToCSS  }}
+    {{ $styles := resources.Open "scss/main.scss" | resources.ToCSS $cssOpts}}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     <script>
     </script>
@@ -88,7 +88,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-7 col-sm-6">
             <h1>Hugo Bootstrap 4</h1>
-            <p class="lead">The Brave SCSS Edition</p>
+            <p class="lead"><span class="oi oi-project" title="project" aria-hidden="true"></span> The Brave SCSS Edition</p>
           </div>
         </div>
       </div>
