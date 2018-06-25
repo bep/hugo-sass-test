@@ -6,7 +6,7 @@
     <title>Hugo bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    {{ $cssOpts := (dict "precision" 8 "enableEmbeddedSourceMap" true ) }}
+    {{ $cssOpts := (dict "enableSourceMap" true ) }}
     {{/* $pcssOpts := (dict "config" "assets/config/postcss.js" ) }}
     {{ $styles := resources.Open "scss/main.scss" | resources.ToCSS | resources.PostCSS $pcssOpts  */}}
     {{ $styles := resources.Open "scss/main.scss" | resources.ToCSS $cssOpts}}
