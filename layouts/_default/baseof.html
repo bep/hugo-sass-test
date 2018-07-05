@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
     {{/* $pcssOpts := (dict "config" "assets/config/postcss.js" ) }}  */}}
-    {{ $styles := resources.Get "scss/main.scss" |  toCSS | fingerprint }}
+    {{ $styles := resources.Get "scss/main.scss" |  toCSS }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Digest }}" media="screen">
     <script>
     </script>
@@ -199,6 +199,18 @@
           </div>
         </div>
       </div>
+
+         <div class="bs-docs-section">
+        <div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 id="buttons">Markdown Content</h1>
+            </div>
+          </div>
+        </div>
+       {{ block "main" . }}{{ end }}
+      </div>
+
       
       <!-- Buttons
       ================================================== -->
