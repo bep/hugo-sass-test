@@ -1,17 +1,19 @@
 
+
 @import "customvars";
+
 @import "variables";
 @import "../vendor/open-iconic/font/css/open-iconic-bootstrap";
 @import "../vendor/bootstrap/scss/bootstrap";
 @import "bootswatch";
 
 
-
-
 body {
   padding-top: 100px;
   font-size: 0.9rem;
+
 }
+
 
 pre {
   background: #f7f7f9;

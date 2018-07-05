@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
     {{/* $pcssOpts := (dict "config" "assets/config/postcss.js" ) }}  */}}
-    {{ $styles := resources.Get "scss/main.scss" |  toCSS }}
+    {{ $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/asdf.scss" .Site |  toCSS $cssOpts }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Digest }}" media="screen">
     <script>
     </script>
