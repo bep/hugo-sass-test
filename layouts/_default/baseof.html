@@ -5,10 +5,15 @@
     <title>Hugo bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{ if .Site.IsServer }}
     {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
-    {{/* $pcssOpts := (dict "config" "assets/config/postcss.js" ) }}  */}}
-    {{ $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/asdf.scss" .Site |  toCSS $cssOpts }}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Digest }}" media="screen">
+    {{ $styles := resources.Get "scss/main.scss" | toCSS $cssOpts }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+    {{ else }}
+    {{ $cssOpts := (dict "targetPath" "styles/main.css" ) }}
+    {{ $styles := resources.Get "scss/main.scss" | toCSS $cssOpts | postCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+    {{ end }}
     <script>
     </script>
   </head>
@@ -182,7 +187,6 @@
           </div>
         </div>
       </div>
-
       <div class="bs-docs-section">
         <div class="page-header">
           <div class="row">
@@ -191,7 +195,7 @@
             </div>
           </div>
         </div>
-          {{ $sunset := (resources.Get "images/sunset.jpg").Fill "300x200" }}
+        {{ $sunset := (resources.Get "images/sunset.jpg").Fill "300x200" }}
         <div class="card" style="width: {{ add $sunset.Width 20}}px">
           <img class="card-img-top" src="{{ $sunset.RelPermalink }}" alt="Sunset" width="{{ $sunset.Width }}" height="{{ $sunset.Height }}">
           <div class="card-body">
@@ -199,8 +203,7 @@
           </div>
         </div>
       </div>
-
-         <div class="bs-docs-section">
+      <div class="bs-docs-section">
         <div class="page-header">
           <div class="row">
             <div class="col-lg-12">
@@ -208,9 +211,8 @@
             </div>
           </div>
         </div>
-       {{ block "main" . }}{{ end }}
+        {{ block "main" . }}{{ end }}
       </div>
-
       
       <!-- Buttons
       ================================================== -->
