@@ -14,6 +14,10 @@
     {{ $styles := resources.Get "scss/main.scss" | toCSS $cssOpts | postCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
     {{ end }}
+    {{ with .Site.Home.Resources.Match "*" }}
+    {{ $jsBundleFromHomePage := . | resources.Concat "bbundle.js"}}
+    <script type="text/javascript" src="{{ $jsBundleFromHomePage.RelPermalink }}"></script>
+    {{ end }}
     <script>
     </script>
   </head>
