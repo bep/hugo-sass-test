@@ -5,6 +5,11 @@
     <title>Hugo bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{/* This is just some dummy example to test dynamic SCSS from Go templates. */}}
+    {{  $c1 :=  ".{{ .Kind }} { color: blue; }" | resources.FromString "kindofblue.templ"  | resources.ExecuteAsTemplate "kindofblue.scss" . | toCSS (dict "targetPath" "styles/templ.css")  }}
+    {{  $c2 :=  ".{{ .Kind }} { color: green; }" | resources.FromString "kindofgreen.templ"  | resources.ExecuteAsTemplate "kindofgreen.scss" . | toCSS (dict "targetPath" "styles/templ.css")  }}
+    {{ $tb := slice $c1 $c2  | resources.Concat "styles/bundle1.css" | minify }}
+    <link rel="stylesheet" href="{{ $tb.Permalink }}" media="screen">
     {{ if .Site.IsServer }}
     {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
     {{ $styles := resources.Get "scss/main.scss" | toCSS $cssOpts }}
