@@ -6,7 +6,9 @@ Get up and running:
 
 ```
 git clone https://github.com/bep/hugo-sass-test.git
+cd hugo-sass-test
 git submodule update --depth 1
+hugo server
 ```
 
 If you want to make changes that triggers a change in the published assets, you also need `PostCSS`:
