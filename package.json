@@ -1,0 +1,24 @@
+{
+  "name": "hugo-sass-test",
+  "version": "0.5.0",
+  "description": "Test site for SASS/SCSS support in Hugo. You need the extended version of >= Hugo 0.43 to run this site.",
+  "main": "none.js",
+  "dependencies": {
+    "autoprefixer": "^9.0.0",
+    "postcss-cli": "^5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bep/hugo-sass-test.git"
+  },
+  "author": "bep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bep/hugo-sass-test/issues"
+  },
+  "homepage": "https://github.com/bep/hugo-sass-test#readme"
+}
