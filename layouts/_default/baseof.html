@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     {{ else }}
     {{ $cssOpts := (dict "targetPath" "styles/main.css" ) }}
-    {{ $styles := resources.Get "scss/main.scss" | toCSS $cssOpts | postCSS | minify | fingerprint }}
+    {{ $postCssOpts := (dict "use" "autoprefixer" ) }}
+    {{ $styles := resources.Get "scss/main.scss" | toCSS $cssOpts | postCSS $postCssOpts | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
     {{ end }}
     {{ with .Site.Home.Resources.Match "*" }}
