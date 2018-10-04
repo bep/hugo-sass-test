@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:latest
+        environment:
+          HUGO_VERSION: 0.49
+          S3DEPLOY_VERSION: 2.2.0
+    steps:
+      - checkout
+      - run:
+          name: Make bin folder
+          command: mkdir -p $HOME/bin
+      - run:
+          name: Install Hugo
+          command: ./ci-install-hugo.sh
+      - run:
+          name: Install s3deploy
+          command: ./ci-install-s3deploy.sh
+      - run:
+          name: Hugo Build and Deploy
+          command: ./deploy.sh
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
