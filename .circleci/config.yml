@@ -9,9 +9,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Make bin folder
-          command: mkdir -p $HOME/bin
-      - run:
           name: Install Hugo
           command: ./ci-install-hugo.sh
       - run:
