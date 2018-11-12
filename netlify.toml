@@ -1,6 +1,5 @@
 [build]
 publish = "public"
-command = "which node && node -v && ldd --version && hugo"
 
 [context.production.environment]
 HUGO_VERSION = "0.49"
