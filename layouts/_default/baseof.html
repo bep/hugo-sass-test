@@ -97,9 +97,15 @@
         <div class="row">
           <div class="col-lg-8 col-md-7 col-sm-6">
             {{ $jsonTime := (getJSON "http://worldclockapi.com/api/json/est/now").currentDateTime }}
-            <h1>#2 Hugo Bootstrap 4 on {{ if  getenv "REPOSITORY_URL" -}}Netlify{{ else }}CirleCI{{ end }} at {{ now.Format "15:04:05" }}. v6-JSON time: {{ $jsonTime }}</h1>
+            <h1>#2 Hugo Bootstrap 4 on {{ if  getenv "REPOSITORY_URL" -}}Netlify{{ else }}CirleCI{{ end }} at {{ now.Format "15:04:05" }}. v7-JSON time: {{ $jsonTime }}</h1>
             <p class="lead bep"><span class="oi oi-project" title="project" aria-hidden="true"></span> The Brave SCSS Edition</p>
 			<p>For the source, see <a href=" https://github.com/bep/hugo-sass-test">github.com/bep/hugo-sass-test</a></p>
+
+
+      <p>
+        Pull Request: {{ getenv "PULL_REQUEST"}}
+        Prime URL: {{ getenv "DEPLOY_PRIME_URL"}}
+      </p>
           </div>
         </div>
       </div>
