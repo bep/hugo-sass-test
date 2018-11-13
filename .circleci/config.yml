@@ -4,9 +4,14 @@ jobs:
     docker:
       - image: circleci/golang:latest
         environment:
-          HUGO_VERSION: 0.49
+          HUGO_VERSION: 0.51
           S3DEPLOY_VERSION: 2.2.0
     steps:
+      - restore_cache:
+          keys:
+            # See https://circleci.com/docs/2.0/caching/
+            - hugo-v1-{{ .Branch }}
+            - hugo-v1-
       - checkout
       - run:
           name: Install Hugo
@@ -17,6 +22,10 @@ jobs:
       - run:
           name: Hugo Build and Deploy
           command: ./deploy.sh
+      - save_cache:
+          key: hugo-v1-{{ .Branch }}
+          paths:
+            - "/tmp/hugo_cache"
 workflows:
   version: 2
   build:
