@@ -4,12 +4,13 @@ title = "Hugo Bootstrap 4 | SCSS Edition"
 
 theme = ["t1"]
 
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = 1
+
 [params]
 # Set SASS variable via site config ...
 moo = "green"
 
 
-[caches]
-[caches.getjson]
-dir = ":cacheDir/:project"
-maxAge = 0

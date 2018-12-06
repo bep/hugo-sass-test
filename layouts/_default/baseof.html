@@ -96,8 +96,8 @@
       <div class="page-header" id="banner">
         <div class="row">
           <div class="col-lg-8 col-md-7 col-sm-6">
-            {{ $jsonTime := (getJSON "http://worldclockapi.com/api/json/est/now").currentDateTime }}
-            <h1>#2 Hugo Bootstrap 4 on {{ if  getenv "REPOSITORY_URL" -}}Netlify{{ else }}CirleCI{{ end }} at {{ now.Format "15:04:05" }}. v7-JSON time: {{ $jsonTime }}</h1>
+            {{ $jsonTime := (getJSON "http://worldtimeapi.org/api/timezone/Europe/Oslo").datetime }}
+            <h1>Hugo Bootstrap 4 on {{ if  getenv "REPOSITORY_URL" -}}Netlify{{ else }}CirleCI{{ end }} at {{ now.Format "15:04:05" }}. JSON time: {{ $jsonTime }}</h1>
             <p class="lead bep"><span class="oi oi-project" title="project" aria-hidden="true"></span> The Brave SCSS Edition</p>
 			<p>For the source, see <a href=" https://github.com/bep/hugo-sass-test">github.com/bep/hugo-sass-test</a></p>
 
