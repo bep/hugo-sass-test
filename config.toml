@@ -7,3 +7,9 @@ theme = ["t1"]
 [params]
 # Set SASS variable via site config ...
 moo = "green"
+
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "30s"
