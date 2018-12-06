@@ -12,4 +12,4 @@ moo = "green"
 [caches]
 [caches.getjson]
 dir = ":cacheDir/:project"
-maxAge = "30s"
+maxAge = 0
