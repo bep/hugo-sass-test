@@ -2,4 +2,4 @@
 title: Home
 ---
 
-Some home content.
+Some home content!!
