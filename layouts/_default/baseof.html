@@ -102,6 +102,9 @@
 			<p>For the source, see <a href=" https://github.com/bep/hugo-sass-test">github.com/bep/hugo-sass-test</a></p>
 
 
+      {{ $sunset := (resources.GetMatch "**.jpg").Fit "800x700" }}
+      <h1>Sunrise</h1>
+      <img src="{{ $sunset.RelPermalink }}" width="{{ $sunset.Width }}">
       <p>
         Pull Request: {{ getenv "PULL_REQUEST"}}
         Prime URL: {{ getenv "DEPLOY_PRIME_URL"}}
